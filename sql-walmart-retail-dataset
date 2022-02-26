@@ -1,0 +1,43 @@
+-- State wise average profits--
+select state, avg(profit) as average_profit
+from walmartRetailData
+group by state
+order by average_profit desc;
+
+-- In wich age the company is getting the maximum profit--
+SELECT DISTINCT(customer_age), avg(profit) as average_profit
+FROM walmartRetailData
+WHERE customer_age is NOT NULL
+GROUP BY customer_age
+order by average_profit DESC;
+
+--Showing the average sales of the company--
+Select avg(sales) as average_sales
+from walmartRetailData;
+
+--Showing the average discount per state--
+SELECT state, avg(discount) as average_discount
+from walmartRetailData
+group by state
+order by average_discount DESC;
+
+--Showing a comparison of average profit between consumer and corporate customers--
+select customer_segment as customer_type, avg(profit) as average_profit 
+from walmartRetailData
+where customer_type like 'Consumer' or customer_type like 'Corporate' 
+group by customer_segment;
+
+--Showing all records with order id ending in 74
+select order_id
+from walmartRetailData
+where order_id like '%74'
+
+-- sales by segment and category--
+select customer_segment as Customer_type, product_category, avg(sales) as average_sales
+from walmartRetailData
+group by customer_segment, product_category;
+
+--Showing the order quantity per Customer type and the profit for each customer customer type
+select customer_segment as customer_type, sum(order_quantity), sum(profit)
+from walmartRetailData
+group BY customer_segment;
