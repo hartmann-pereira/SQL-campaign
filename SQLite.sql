@@ -1,5 +1,8 @@
 --This SQL file contains queries about a walmart retail dataset between 2012 and 2015--
 --Built importing a csv file into sqloteonline.com and querying the data--
+--Skills used: select, select distinct, where, and/or, order by, min/max/average/sum/count, aliases, group by, subquery--
+--Dataset consisted of 25 columns and around 8400 rows having text, numbers values and also null values--
+
 --Created by Ricardo Hartmann--
 --Available on github--
 
